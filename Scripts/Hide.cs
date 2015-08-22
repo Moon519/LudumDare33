@@ -47,7 +47,6 @@ public class Hide : MonoBehaviour
 	// Detect the potential hiding place 
 	void OnTriggerEnter(Collider other)
 	{
-		Debug.Log(other.name);
 		if (!canHide && other.gameObject.CompareTag("HidingPlace"))
 		{
 			potentialHidingPlace = other.gameObject;
