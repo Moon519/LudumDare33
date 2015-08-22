@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityStandardAssets.Characters.ThirdPerson;
 
 public class AI : MonoBehaviour
 {
@@ -9,9 +10,11 @@ public class AI : MonoBehaviour
 	[SerializeField]
 	private float awareness;
 	[SerializeField]
-	private float reactionTime;
-	[SerializeField]
 	private float movingSpeed;
+	[SerializeField]
+	private float acceleration;
+	[SerializeField]
+	private float reactionTime;
 	[SerializeField]
 	private float timeBeforeLoose;
 
@@ -24,6 +27,7 @@ public class AI : MonoBehaviour
 	private List<Vector3> patrollingPositions;
 
 	// Private variables
+	private GameObject trackedObject;
 	private Vector3 lastPlayerPosition;
 	private NavMeshAgent navMeshAgent;
 	private float reactionTimer;
@@ -45,18 +49,22 @@ public class AI : MonoBehaviour
 		if (!isTracking && trackingStarted && reactionTimer - Time.realtimeSinceStartup < 0f)
 			StartTracking();
 
-		// Check if the player has loose or not
+		// Check if the player has loose or not, and if he is hiding or not
 		if (isTracking || trackingStarted)
 		{
 			trackingTimer -= Time.deltaTime;
 			if (trackingTimer <= 0f)
 				GameManager.Instance.GameOver();
+
+			if (trackedObject.GetComponent<ThirdPersonUserControl>().isHiding)
+				GoBackToStartingPoint();
 		}
 	}
 
 	private void StartTracking()
 	{
 		navMeshAgent.speed = movingSpeed;
+		navMeshAgent.acceleration = acceleration;
 		navMeshAgent.destination = lastPlayerPosition;
 		isTracking = true;
 	}
@@ -68,6 +76,7 @@ public class AI : MonoBehaviour
 		isTracking = false;
 		trackingStarted = false;
 		trackingTimer = 1000f;
+		trackedObject = null;
 	}
 
 	void OnTriggerEnter(Collider other)
@@ -80,11 +89,13 @@ public class AI : MonoBehaviour
 			reactionTimer = Time.realtimeSinceStartup + reactionTime;
 			trackingTimer = timeBeforeLoose;
             trackingStarted = true;
-		}
+			trackedObject = other.gameObject;
+        }
 	}
 
 	void OnTriggerExit(Collider other)
 	{
+		// If the player escape in time, the AI will just return to his starting point
 		if (other.gameObject.CompareTag("Player"))
 			GoBackToStartingPoint();
 	}
