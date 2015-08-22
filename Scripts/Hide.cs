@@ -7,6 +7,7 @@ public class Hide : MonoBehaviour
 	private SkinnedMeshRenderer meshRenderer;
 	private bool canHide;
 	private GameObject potentialHidingPlace;
+	private Vector3 previousPosition;
 
 	void Start ()
 	{
@@ -33,12 +34,14 @@ public class Hide : MonoBehaviour
 	private void HidePlayer()
 	{
 		meshRenderer.enabled = false;
-		this.GetComponent<Rigidbody>().velocity = Vector3.zero;
+		previousPosition = this.transform.position;
+		this.transform.position = potentialHidingPlace.GetComponent<HidingPlace>().hidingPosition;
 	}
 
 	private void RevealPlayer()
 	{
 		meshRenderer.enabled = true;
+		this.transform.position = previousPosition;
 	}
 
 	// Detect the potential hiding place 
