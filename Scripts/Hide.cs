@@ -22,7 +22,7 @@ public class Hide : MonoBehaviour
 				RevealPlayer();
 				this.GetComponent<ThirdPersonUserControl>().isHiding = false;
 			}
-			else
+			else if (canHide)
 			{
 				HidePlayer();
 				this.GetComponent<ThirdPersonUserControl>().isHiding = true;
@@ -33,6 +33,7 @@ public class Hide : MonoBehaviour
 	private void HidePlayer()
 	{
 		meshRenderer.enabled = false;
+		this.GetComponent<Rigidbody>().velocity = Vector3.zero;
 	}
 
 	private void RevealPlayer()
@@ -43,6 +44,7 @@ public class Hide : MonoBehaviour
 	// Detect the potential hiding place 
 	void OnTriggerEnter(Collider other)
 	{
+		Debug.Log(other.name);
 		if (!canHide && other.gameObject.CompareTag("HidingPlace"))
 		{
 			potentialHidingPlace = other.gameObject;
