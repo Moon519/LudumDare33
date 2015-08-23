@@ -26,9 +26,9 @@ public class AI : MonoBehaviour
 	[SerializeField]
 	private List<Vector3> patrollingPositions;
 
-	[Header("Animation Settings")]
+	[Header("UI Settings")]
 	[SerializeField]
-	private Animator animator;
+	private GameObject warningText;
 
 	// Private variables
 	private GameObject trackedObject;
@@ -45,6 +45,7 @@ public class AI : MonoBehaviour
 		startPosition = this.transform.position;
         this.GetComponent<SphereCollider>().radius = awareness;
 		navMeshAgent = this.GetComponent<NavMeshAgent>();
+		warningText.SetActive(false);
 	}
 
 	void Update()
@@ -82,6 +83,7 @@ public class AI : MonoBehaviour
 		trackingStarted = false;
 		trackingTimer = 1000f;
 		trackedObject = null;
+		warningText.SetActive(false);
 	}
 
 	void OnTriggerEnter(Collider other)
@@ -95,6 +97,7 @@ public class AI : MonoBehaviour
 			trackingTimer = timeBeforeLoose;
             trackingStarted = true;
 			trackedObject = other.gameObject;
+			warningText.SetActive(true);
         }
 	}
 
