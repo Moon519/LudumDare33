@@ -6,9 +6,16 @@ public class GameManager : MonoBehaviour
 	// Singleton pattern
 	public static GameManager Instance;
 
+	private int collectedItems = 0;
+
 	void Awake()
 	{
 		Instance = this;
+	}
+
+	public void IncreaseCollectedItems()
+	{
+		collectedItems++;
 	}
 
 	public void GameOver()
