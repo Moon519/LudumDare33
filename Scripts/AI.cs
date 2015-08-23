@@ -26,6 +26,10 @@ public class AI : MonoBehaviour
 	[SerializeField]
 	private List<Vector3> patrollingPositions;
 
+	[Header("Animation Settings")]
+	[SerializeField]
+	private Animator animator;
+
 	// Private variables
 	private GameObject trackedObject;
 	private Vector3 lastPlayerPosition;
@@ -67,6 +71,7 @@ public class AI : MonoBehaviour
 		navMeshAgent.acceleration = acceleration;
 		navMeshAgent.destination = lastPlayerPosition;
 		isTracking = true;
+		
 	}
 
 	private void GoBackToStartingPoint()
