@@ -46,7 +46,6 @@ public class StandingAI : AI
 		navMeshAgent.acceleration = acceleration;
 		navMeshAgent.destination = lastPlayerPosition;
 		isTracking = true;
-
 	}
 
 	private void GoBackToStartingPoint()
