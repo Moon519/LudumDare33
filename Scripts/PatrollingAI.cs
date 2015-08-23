@@ -45,7 +45,9 @@ public class PatrollingAI : AI
 		}
 		else
 		{
-			if (timerTrack - Time.realtimeSinceStartup < 0f)
+			timerTrack -= Time.deltaTime;
+
+			if (timerTrack <= 0f)
 				GameManager.Instance.GameOver();
 			if (trackedObject.GetComponent<ThirdPersonUserControl>().isHiding)
 				RestoreLastPath();
@@ -64,7 +66,7 @@ public class PatrollingAI : AI
 	private void StartTracking(Vector3 dest)
 	{
 		navMeshAgent.destination = dest;
-		timerTrack = Time.realtimeSinceStartup + timeBeforeLoose;
+		timerTrack = timeBeforeLoose;
 		trackStarted = true;
 		warningText.SetActive(true);
 	}
