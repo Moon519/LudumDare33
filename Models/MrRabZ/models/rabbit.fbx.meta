@@ -1263,6 +1263,7 @@ ModelImporter:
     2300186: WGT-VIS-thigh_pole_ik_R
     2300188: WGT-VIS-upper_arm_pole_ik_L
     2300190: WGT-VIS-upper_arm_pole_ik_R
+    2300192: rabbit
     3300000: //RootNode
     3300002: WGT-chest
     3300004: WGT-elbow_hose_L
@@ -1359,6 +1360,7 @@ ModelImporter:
     3300186: WGT-VIS-thigh_pole_ik_R
     3300188: WGT-VIS-upper_arm_pole_ik_L
     3300190: WGT-VIS-upper_arm_pole_ik_R
+    3300192: rabbit
     4300000: rabbit
     4300084: WGT-palm_R
     4300086: WGT-palm_L
@@ -7529,7 +7531,7 @@ ModelImporter:
     feetSpacing: 0
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   additionalBone: 0
   userData: 
   assetBundleName: 
