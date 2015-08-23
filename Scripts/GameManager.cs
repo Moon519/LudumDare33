@@ -18,6 +18,11 @@ public class GameManager : MonoBehaviour
 		collectedItems++;
 	}
 
+	public void PlayerWin()
+	{
+
+	}
+
 	public void GameOver()
 	{
 		Debug.Log("!!! Game Over !!!");
