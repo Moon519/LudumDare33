@@ -4,6 +4,8 @@ using System.Collections;
 public class Jumper : MonoBehaviour
 {
 	[SerializeField]
+	private UnityEngine.UI.Text informationTextZone;
+	[SerializeField]
 	private float forwardForce;
 	[SerializeField]
 	private float verticalForce;
@@ -28,6 +30,7 @@ public class Jumper : MonoBehaviour
 		{
 			playerNearBy = true;
 			player = other.gameObject;
+			informationTextZone.text = "Press E to Jump";
 		}
 	}
 
@@ -37,6 +40,7 @@ public class Jumper : MonoBehaviour
 		{
 			player = null;
 			playerNearBy = false;
+			informationTextZone.text = "";
 		}
 	}
 }

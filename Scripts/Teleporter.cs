@@ -4,6 +4,8 @@ using System.Collections;
 public class Teleporter : MonoBehaviour
 {
 	[SerializeField]
+	private UnityEngine.UI.Text informationTextZone;
+	[SerializeField]
 	private GameObject destinationTeleporter;
 
 	private bool playerNearBy = false;
@@ -26,6 +28,7 @@ public class Teleporter : MonoBehaviour
 		{
 			playerNearBy = true;
 			player = other.gameObject;
+			informationTextZone.text = "Press E to Teleport";
 		}
 	}
 
@@ -35,6 +38,7 @@ public class Teleporter : MonoBehaviour
 		{
 			player = null;
 			playerNearBy = false;
+			informationTextZone.text = "";
 		}
 	}
 }

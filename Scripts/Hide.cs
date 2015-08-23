@@ -4,6 +4,8 @@ using UnityStandardAssets.Characters.ThirdPerson;
 public class Hide : MonoBehaviour
 {
 	[SerializeField]
+	private UnityEngine.UI.Text informationTextZone;
+	[SerializeField]
 	private SkinnedMeshRenderer meshRenderer;
 	private bool canHide;
 	private GameObject potentialHidingPlace;
@@ -49,6 +51,7 @@ public class Hide : MonoBehaviour
 	{
 		if (!canHide && other.gameObject.CompareTag("HidingPlace"))
 		{
+			informationTextZone.text = "Press E to Hide";
 			potentialHidingPlace = other.gameObject;
 			canHide = true;
 		}
@@ -67,6 +70,7 @@ public class Hide : MonoBehaviour
 	{
 		if (canHide && other.gameObject == potentialHidingPlace)
 		{
+			informationTextZone.text = "";
 			potentialHidingPlace = null;
 			canHide = false;
 		}
