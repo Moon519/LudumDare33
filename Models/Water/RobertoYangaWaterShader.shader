@@ -62,7 +62,7 @@ Shader "Radiator/DX9 Water" {
     // very basic water sine wave vertex animation
     void vert(inout appdata_full v) {
         // in my game, I use timeScale = 0.5 for reasons; you'll want to slow this down probably
-        v.vertex.y += sin(_Time.z * 4 + v.vertex.x + v.vertex.z) * 0.03;
+        v.vertex.y += sin(_Time.z * 4 + v.vertex.x + v.vertex.z) * 0.000001;
     }
 
     void surf(Input IN, inout SurfaceOutput o) {
