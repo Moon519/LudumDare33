@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
 	// Singleton pattern
 	public static GameManager Instance;
 	private int collectedItems = 0;
+	private int debugKeyCount = 0;
 
 	void Awake()
 	{
@@ -29,12 +30,16 @@ public class GameManager : MonoBehaviour
 		}
 
 		if (Input.GetKeyDown(KeyCode.R))
-		{
 			Application.LoadLevel(1);
-		}
 		if (Input.GetKeyDown(KeyCode.Escape))
-		{
 			Application.LoadLevel(0);
+		if (Input.GetKeyDown(KeyCode.O))
+			debugKeyCount++;
+		if (debugKeyCount >= 10 && !playerLoose)
+		{
+			informationPanel.text = "You just cheated by using the debug key too many times! You loose.";
+			timerBackToMainMenu = 4;
+			playerLoose = true;
 		}
 	}
 
