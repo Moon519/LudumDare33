@@ -18,7 +18,7 @@ public class Hide : MonoBehaviour
 	
 	void Update ()
 	{
-		if (Input.GetKeyDown(KeyCode.A))
+		if (Input.GetKeyDown(KeyCode.E))
 		{
 			if (this.GetComponent<ThirdPersonUserControl>().isHiding)
 			{

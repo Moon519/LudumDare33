@@ -3,6 +3,8 @@ using System.Collections;
 
 public class CollectableItems : MonoBehaviour
 {
+	[SerializeField]
+	private UnityEngine.UI.Text informationTextZone;
 	private bool playerNearBy = false;
 	private GameObject player;
 
@@ -24,6 +26,7 @@ public class CollectableItems : MonoBehaviour
 		{
 			playerNearBy = true;
 			player = other.gameObject;
+			informationTextZone.text = "Press E to pick up item";
 		}
 	}
 
@@ -33,6 +36,7 @@ public class CollectableItems : MonoBehaviour
 		{
 			player = null;
 			playerNearBy = false;
+			informationTextZone.text = "";
 		}
 	}
 }
