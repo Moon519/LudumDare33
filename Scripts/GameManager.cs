@@ -41,8 +41,8 @@ public class GameManager : MonoBehaviour
 			informationPanel.text += "\n You got them all and just finished the game, congratz!";
 		else
 		{
-			informationPanel.text += "\n You didn't collect all the items, try again!";
-			timerBackToMainMenu = 3;
+			informationPanel.text += "\n You didn't collect them all, try again!";
+			timerBackToMainMenu = 4;
 			playerLoose = true;
 		}
 	}
@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour
 	public void GameOver()
 	{
 		informationPanel.text = "A Villager just catched you! You loose!";
-		timerBackToMainMenu = 3;
+		timerBackToMainMenu = 2;
 		playerLoose = true;
     }
 }

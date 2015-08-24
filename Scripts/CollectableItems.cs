@@ -17,6 +17,7 @@ public class CollectableItems : MonoBehaviour
 	private void PickUpObject()
 	{
 		GameManager.Instance.IncreaseCollectedItems();
+		informationTextZone.text = "";
 		Destroy(this.gameObject);
 	}
 

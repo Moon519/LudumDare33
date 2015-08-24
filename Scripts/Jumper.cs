@@ -21,7 +21,8 @@ public class Jumper : MonoBehaviour
 
 	private void JumpPlayer()
 	{
-		player.GetComponent<Rigidbody>().AddRelativeForce(0f, verticalForce, forwardForce);
+		player.GetComponent<Rigidbody>().AddRelativeForce(0f, verticalForce, 0f);
+		player.GetComponent<Rigidbody>().AddRelativeForce(0f, 0f, forwardForce);
 	}
 
 	void OnTriggerEnter(Collider other)
