@@ -36,7 +36,11 @@ public class GameManager : MonoBehaviour
 
 	public void PlayerWin()
 	{
-
+		informationPanel.text = "You just reached the win zone with " + collectedItems + " items!";
+		if (collectedItems == 10)
+			informationPanel.text += "\n You got them all and just finished the game, congratz!";
+		else
+			informationPanel.text += "\n You didn't collect all the items, try again!";
 	}
 
 	public void GameOver()
