@@ -5,6 +5,11 @@ Get The game
 -------------------
 
 
+You can get the game here on my google drive:
+
+
+https://goo.gl/cq7G39
+
 Recap
 --------------------
 
