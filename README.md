@@ -1,16 +1,35 @@
 # LudumDare33
-Ludum Dare 33 video game
+Grouchou The Ugly
 
----------------------
+
+Get The game
+-------------------
+
+
+Recap
+--------------------
+
+
+-Third Person Game
+
+
+-Exploration
+
+
+-Platform
+
+
 Pitch
+---------------------
 
 
-You are a very ugly monster, you wake up and you realized that you are in a big city, full of something. 
-And those something can't see you, otherwise they will be afraid and you will be put in jail for you ugliness. 
-So you have to reach the outside of the city without being seen by anyone. In a perfect world, you would also collect all the special items hidden in the city. You may have to climb a little.
+You are a very ugly monster, you wake up and you realized that you are in a big city, full of people. 
+And those people can't see you, otherwise they will be afraid and you will be put in jail for you ugliness. 
+So you have to reach the outside of the city without being seen by anyone. But, because you are a archeologist monster, you also havet to collect all the special items hidden in the city.
 
------------------
+
 Technology
+-----------------
 
 
 -Unity3D/C# scripting
@@ -19,9 +38,11 @@ Technology
 -Blender
 
 
+-Asset Store for basically all good looking models.
 
+
+Features
 ---------------------------
-Features (first version)
 
 
 -One level (city-like)
@@ -33,20 +54,15 @@ Features (first version)
 -Third person control
 
 
--May be some special gameplay ability with the city
+-Special gameplay ability
 
 
-
--------------------
 Graphics
+-------------------
 
 
-Medieval style, with props like car wheel, wood fences... Considering my skills in modeling, I will probably use many free asset from the Unity asset store.
+Medieval style city, with props like car wheel, wood fences, grass... Considering my skills in modeling, I moslty used models from the asset store (all free). 
 
 
-
------------------
-Music
-
-
-If I have the time, I will try to find a music that fits into the game.
+I also used Roberto Yanga Water Shader, you can find it here:
+https://gist.github.com/radiatoryang/d200fd4a4d4fb065e6b5
