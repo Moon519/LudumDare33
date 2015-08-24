@@ -27,6 +27,15 @@ public class GameManager : MonoBehaviour
 			if (timerBackToMainMenu < 0f)
 				Application.LoadLevel(0);
 		}
+
+		if (Input.GetKeyDown(KeyCode.R))
+		{
+			Application.LoadLevel(1);
+		}
+		if (Input.GetKeyDown(KeyCode.Escape))
+		{
+			Application.LoadLevel(0);
+		}
 	}
 
 	public void IncreaseCollectedItems()

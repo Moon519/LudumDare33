@@ -21,6 +21,7 @@ public class Jumper : MonoBehaviour
 
 	private void JumpPlayer()
 	{
+		player.transform.position = new Vector3(player.transform.position.x, player.transform.position.y + 1f, player.transform.position.z);
 		player.GetComponent<Rigidbody>().AddRelativeForce(0f, verticalForce, 0f);
 		player.GetComponent<Rigidbody>().AddRelativeForce(0f, 0f, forwardForce);
 	}
