@@ -1,5 +1,4 @@
-# LudumDare33
-Grouchou The Ugly
+# LudumDare33 : Grouchou The Ugly
 
 
 Get The game
