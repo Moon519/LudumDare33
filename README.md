@@ -7,8 +7,17 @@ Get The game
 
 You can get the game here on my google drive:
 
+WINDOWS: https://goo.gl/cq7G39
 
-https://goo.gl/cq7G39
+
+MACOS:
+
+
+LINUX:
+
+
+Recommended Quality Settings: Beautiful, or Good. Fantastic is useless.
+
 
 Recap
 --------------------
